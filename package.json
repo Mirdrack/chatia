@@ -1,0 +1,17 @@
+{
+  "name": "chatia",
+  "version": "1.0.0",
+  "description": "Juts another version of the AV Chat",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat"
+  ],
+  "author": "mirdrack",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
