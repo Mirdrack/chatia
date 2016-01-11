@@ -3,4 +3,16 @@ var config = {};
 config.app = {};
 config.app.port =  8000;
 
+config.sessionOptions = {
+
+	secret: 'a_random_word',
+	key: 'express.sid',
+	httpOnly: false,
+	resave: true, 
+	saveUninitialized: true
+}
+
+config.database = {};
+config.database.url = 'mongodb://<user>:<pass>@mongo.onmodulus.net:27017/Mikha4ot';
+
 module.exports = config;

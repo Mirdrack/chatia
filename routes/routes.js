@@ -1,4 +1,4 @@
-var routes = function (app) {
+var routes = function (app, passport) {
 
 	app.get('/', function (req, res) {
 	
