@@ -1,0 +1,29 @@
+extends layouts/default
+		
+block content
+	div.col-sm-6.col-sm-offset-3
+		h1 
+			span.fa.fa-sign-in &nbsp;Signup
+		
+		if message 
+			div.red.lighten-2
+				p #{message}
+
+		// Login Form
+		form(action='/signup' method='post' class='col s4 push-s4')
+			div.input-field.col.s4
+				input(type='text', name='username')
+				label(for='username') Username
+			div.input-field.col.s4
+				input(type='text', name='email')
+				label(for='email') Email
+			div.input-field.col.s4
+				input(type='password', class='form-control', name='password')
+				label(for='password') Password
+			button(type='submit', class='waves-effect waves-light btn') Singup
+		hr
+		p 	Already have an account? 
+			a(href='/signup')&nbsp;Login
+		p 	Or go home 
+			a(href='/')&nbsp;Home
+	

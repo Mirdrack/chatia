@@ -6,6 +6,8 @@ var flash = require('connect-flash-light');
 var passport = require('passport');
 var app = express();
 
+require('./config/passport')(passport);
+
 app.use(cookieParser());
 app.use(session(config.sessionOptions));
 app.use(passport.initialize());
