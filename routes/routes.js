@@ -10,14 +10,13 @@ var routes = function (app, passport) {
 		res.render('login.jade', { message: req.flash('loginMessage') }); 
 	});
 
-	app.get('/signup', function(req, res)
-	{
+	app.get('/signup', function(req, res) {
+		
 		res.render('signup.jade', { message: req.flash('signupMessage') });
 	});
 
-	app.post('/signup', passport.authenticate('local-signup', 
-	{
-		successRedirect : '/profile',
+	app.post('/signup', passport.authenticate('local-signup', {
+		successRedirect : '/',
 		failureRedirect : '/signup',
 		failureFlash : true
 	}));
