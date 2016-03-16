@@ -30,8 +30,6 @@ module.exports = function (passport) {
 
     function(req, email, password, done) {
 
-            console.log(req);
-            console.log(password);
         // User.findOne wont fire unless data is sent back
         process.nextTick(function() {
             
@@ -42,7 +40,10 @@ module.exports = function (passport) {
             User.findOne({ 'local.email' :  email }, function(err, user) {
 
                 if (err)
+                {
+                    console.log(err);
                     return done(err);
+                }
 
                 // check to see if theres already a user with that email
                 if (user) {
@@ -52,7 +53,7 @@ module.exports = function (passport) {
                 else {
     				
                     // If there is no user with that email we create the user
-                    var newUser            = new User();
+                    var newUser = new User();
 
                     // Set the user's local credentials
                     newUser.local.username = req.body.username;

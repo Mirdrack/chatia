@@ -1,1 +1,29 @@
-H1 Profile
+extends layouts/default
+		
+block content
+	div.col-sm-6.col-sm-offset-3
+		nav
+			div(class='nav-wrapper') 
+				ul
+					li
+						a(href='/chat') Chat
+					li
+						a(href='/logout') Logout
+
+		h1 
+			span.fa.fa-user &nbsp;Profile
+		
+		p
+			strong Id: 
+			span #{user._id}
+			br
+			strong Username: 
+			span #{user.local.username}
+			br
+			strong Email: 
+			span #{user.local.email}
+			br
+			strong Password: 
+			span #{user.local.password}
+			br
+						
