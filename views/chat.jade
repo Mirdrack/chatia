@@ -3,6 +3,9 @@ extends layouts/default
 block javascripts
 	script(type='text/javascript', src='https://cdn.socket.io/socket.io-1.4.5.js')
 	script(type='text/javascript', src='js/chat.js')
+
+block stylesheets
+	link(rel='stylesheet', href='css/chat.css')
 		
 block content
 	div.row
@@ -23,6 +26,8 @@ block content
 					div.col.s10
 						textarea(id='message' class='materialize-textarea' row='2')
 					div.col.s2
-						input(id='send-button' type='submit' class='waves-effect waves-light btn' value='Send')
+						button(id='send-button' type='submit' class='waves-effect waves-light btn-large') Send
+							i(class='fa fa-paper-plane') 
+							
 		div#user-list.col.s2
 			h5 User list

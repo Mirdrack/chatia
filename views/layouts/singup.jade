@@ -3,10 +3,14 @@ extends layouts/default
 block content
 	div.col-sm-6.col-sm-offset-3
 		h1 
-			span.fa.fa-sign-in &nbsp;Signup
+			span.fa.fa-sign-in &nbsp;Signu
 		
-		//if message.length > 0
-		//	div.red.lighten-2
+		span hola #{ messages.length }
+		span adios #{ messages }
+		if (messages.length)
+			div.red.lighten-2
+				for message in messages
+					#{ message }
 
 		// Login Form
 		form(action='/signup' method='post' class='col s4 push-s4')

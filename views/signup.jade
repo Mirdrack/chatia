@@ -5,11 +5,11 @@ block content
 		h1 
 			span.fa.fa-sign-in &nbsp;Signup
 		
-		if message 
+		if (message.length)
 			div.red.lighten-2
-				p #{message}
+				#{message}
 
-		// Login Form
+		// Sign Up Form
 		form(action='/signup' method='post' class='col s4 push-s4')
 			div.input-field.col.s4
 				input(type='text', name='username')
