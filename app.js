@@ -10,7 +10,6 @@ var app = express();
 
 
 // mongoose.connect(config.database.url);
-
 var MongoDB = mongoose.connect(config.database.url).connection;
 MongoDB.on('error', function(err) { console.log(err.message); } );
 MongoDB.once('open', function() {
@@ -31,7 +30,7 @@ app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('views', './views');
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 var routes = require('./routes/routes')(app, passport);

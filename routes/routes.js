@@ -2,17 +2,17 @@ var routes = function (app, passport) {
 
 	app.get('/', function (req, res) {
 	
-		res.render('index.jade');
+		res.render('index.pug');
 	});
 
 	app.get('/login', function(req, res) {
 		
-		res.render('login.jade', { message: req.flash('loginMessage') }); 
+		res.render('login.pug', { message: req.flash('loginMessage') }); 
 	});
 
 	app.get('/signup', function(req, res) {
 		
-		res.render('signup.jade', { message: req.flash('signupMessage') });
+		res.render('signup.pug', { message: req.flash('signupMessage') });
 	});
 
 	app.post('/signup', passport.authenticate('local-signup', {
@@ -31,14 +31,14 @@ var routes = function (app, passport) {
 
 	app.get('/profile', isLoggedIn, function(req, res) {
 		
-		res.render('profile.jade', {
+		res.render('profile.pug', {
 			user : req.user // get the user out of session and pass to template
 		});
 	});
 
 	app.get('/chat', isLoggedIn, function(req, res) {
 		
-		res.render('chat.jade', {
+		res.render('chat.pug', {
 			
 			user : req.user
 		});
